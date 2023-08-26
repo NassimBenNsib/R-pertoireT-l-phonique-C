@@ -1,0 +1,325 @@
+#ifndef ENTREE_SORTIE_H_INCLUDED
+#define ENTREE_SORTIE_H_INCLUDED
+
+/******Partie 0 *****/
+int Taille_Liste_Rep(Liste_Tel l)
+{
+    int n=0 ;
+    while(l)
+    {
+        n++ ;
+        l=l->Suivant ;
+    }
+    return n;
+}
+/**Recherche**/
+int Recherche_Tel(Liste_Tel l,char *Num)
+{
+    int pos=1 ;
+    if(l)
+        while(l)
+        {
+            if(strcmp(l->Info.Num_Tel,Num)==0)
+                return pos ;
+            pos++ ;
+            l=l->Suivant ;
+        }
+    return 0 ;
+}
+int Recherche_Ville(Liste_Tel l,char *ch)
+{
+    int pos=1 ;
+    if(l)
+        while(l)
+        {
+            if(strcmp(l->Info.AD.Ville,ch)==0)
+                return pos ;
+            pos++ ;
+            l=l->Suivant ;
+        }
+    return 0 ;
+}
+int Recherche_Ind(Liste_Tel l,char *ch)
+{
+    int pos=1 ;
+    if(l)
+        while(l)
+        {
+            if(strstr(l->Info.Num_Tel,ch)==l->Info.Num_Tel)
+                return pos ;
+            pos++ ;
+            l=l->Suivant ;
+        }
+    return 0 ;
+}
+/**Insersion**/
+Liste_Tel Insere_Tete_Tel(Liste_Tel l,Contact c)
+{
+    Liste_Tel p ;
+    p=(struct Cellule *)malloc(sizeof(struct Cellule)) ;
+    p->Info=c ;
+    p->Suivant=l ;
+    l=p ;
+    return l ;
+}
+Liste_Tel Insere_Queue_Tel(Liste_Tel l,Contact c)
+{
+    Liste_Tel p,q=l ;
+    if(l==NULL)
+        l=Insere_Tete_Tel(l,c) ;
+    else
+    {
+        while(q->Suivant)
+            q=q->Suivant ;
+        p=(struct Cellule *)malloc(sizeof(struct Cellule)) ;
+        p->Info=c ;
+        p->Suivant=NULL;
+        q->Suivant=p;
+    }
+    return l;
+}
+Liste_Tel Insere_Pos_Tel(Liste_Tel l,Contact c,int pos)
+{
+    int cp=1;
+    Liste_Tel p,q=l ;
+    if(l)
+    {
+    	 while(cp<pos-1)
+    	{
+        	cp++;
+        	q=q->Suivant ;
+    	}
+    	p=(struct Cellule *)malloc(sizeof(struct Cellule)) ;
+    	p->Info=c ;
+    	p->Suivant=q->Suivant ;
+    	q->Suivant=p ;
+    }
+    else
+    	l=Insere_Tete_Tel(l,c) ;
+
+    return l ;
+}
+/**Suppression**/
+Liste_Tel Suppression_Tete(Liste_Tel l)
+{Liste_Tel pi=l ;
+    if(!l)
+      printf("Liste Vide \n");
+    else
+    {
+          l=l->Suivant ;
+          free(pi);
+    }
+    return l;
+}
+Liste_Tel Suppression_Queue(Liste_Tel l)
+{
+    Liste_Tel pi=l;
+    if(l->Suivant==NULL)
+        {
+        l=l->Suivant ;
+        free(pi);
+        }
+    else
+    {
+        while(pi->Suivant->Suivant)
+            pi=pi->Suivant ;
+        free(pi->Suivant);
+        pi->Suivant=NULL ;
+    }
+    return l;
+}
+void Suppression_Pos(Liste_Tel l,int pos)
+{
+    Liste_Tel p1=l,p2;
+    int i=1;
+    if(pos!=1&&pos!=Taille_Liste_Rep(l))
+    {
+        while(i<pos-1)
+        {
+            i++;
+            p1=p1->Suivant ;
+        }
+        p2=p1->Suivant ;
+        p1->Suivant=p2->Suivant ;
+        free(p2);
+    }
+}
+Liste_Tel Suppression_Tel_Donne(Liste_Tel lp,char *ch)
+{
+    int ok=0;
+    Liste_Tel p1=lp,p2;
+    if(strcmp(p1->Info.Num_Tel,ch)==0)
+    {
+        lp=lp->Suivant ;
+        free(p1);
+    }
+    else
+    {
+        while(p1->Suivant)
+            if(strcmp(p1->Suivant->Info.Num_Tel,ch)==0)
+            {
+                ok=1;
+                break;
+            }
+            else
+                p1=p1->Suivant ;
+        if(ok)
+        {
+            p2=p1->Suivant;
+            p1->Suivant=p2->Suivant ;
+            free(p2);
+        }
+    }
+    return lp ;
+}
+/****Partie 4******/
+void Tri1(Liste_Tel l)
+{
+    Contact aux;
+    Liste_Tel p1,p2;
+    p1=l ;
+    while(p1->Suivant)
+    {
+        p2=p1->Suivant ;
+        while(p2)
+        {
+            if(strcmp(p1->Info.Num_Tel,p2->Info.Num_Tel)==-1)
+            {
+                aux=p1->Info ;
+                p1->Info=p2->Info ;
+                p2->Info=aux ;
+            }
+            p2=p2->Suivant ;
+        }
+        p1=p1->Suivant ;
+    }
+}
+/****Partie 2*****/
+Liste_Tel Suppression_Ville(Liste_Tel lp,char *ch)
+{
+    int ok=0;
+    Liste_Tel p1=lp,p2;
+    if(strcmp(p1->Info.AD.Ville,ch)==0)
+    {
+        lp=lp->Suivant ;
+        free(p1);
+    }
+    else
+    {
+        while(p1->Suivant)
+            if(strcmp(p1->Suivant->Info.AD.Ville,ch)==0)
+            {
+                ok=1;
+                break;
+            }
+            else
+                p1=p1->Suivant ;
+        if(ok)
+        {
+            p2=p1->Suivant;
+            p1->Suivant=p2->Suivant ;
+            free(p2);
+        }
+    }
+    return lp ;
+}
+Liste_Tel Suppression_Ville_Donnee(Liste_Tel l,char *ch)
+{
+    int fois=0 ;
+    while(Recherche_Ville(l,ch))
+    {
+        fois=1 ;
+        l=Suppression_Ville(l,ch) ;
+    }
+    if(fois==0)
+        puts("Il n'existe  pas \n") ;
+    return l ;
+}
+Liste_Tel Suppression_Ind(Liste_Tel lp,char *ch)
+{
+    int ok=0;
+    Liste_Tel p1=lp,p2;
+    if(strstr(p1->Info.Num_Tel,ch)==p1->Info.Num_Tel)
+    {
+        lp=lp->Suivant ;
+        free(p1);
+    }
+    else
+    {
+        while(p1->Suivant)
+            if(strstr(p1->Suivant->Info.Num_Tel,ch)==p1->Suivant->Info.Num_Tel)
+            {
+                ok=1;
+                break;
+            }
+            else
+                p1=p1->Suivant ;
+        if(ok)
+        {
+            p2=p1->Suivant;
+            p1->Suivant=p2->Suivant ;
+            free(p2);
+        }
+    }
+    return lp ;
+}
+Liste_Tel Suppression_Ind_Donnee(Liste_Tel l,char *ch)
+{
+    int fois=0 ;
+    while(Recherche_Ind(l,ch))
+    {
+        fois=1 ;
+        l=Suppression_Ind(l,ch) ;
+    }
+    return l ;
+}
+/****Partie 5****/
+void Enregistrement_Contact(Liste_Tel l)
+{
+    FILE *fp;
+    fp=fopen("liste_contact.txt","w");
+    while(l)
+    {
+        fprintf(fp,"|%s|%s|%s|%s|%s|%s|%s|%s|\n",l->Info.Num_Tel,l->Info.Nom,l->Info.Prenom,l->Info.DN,l->Info.AD.Ville,l->Info.AD.Rue,l->Info.AD.Code_postal,l->Info.E_Mail) ;
+        l=l->Suivant;
+    }
+    fclose(fp);
+}
+/**Construction**/
+int construction(char *ligne,int pos,char s,char *ch)
+{
+    int i,j;
+    for(i=pos,j=0;ligne[i]!=s;i++)
+            ch[j++]=ligne[i];
+        ch[j]='\0';
+    return i+1;
+}
+/**Reccuperation**/
+Liste_Tel Recuperation_Contact()
+{
+
+    FILE *fp;
+    Liste_Tel p=NULL;
+    Contact c ;
+    int pos;
+    char ligne[200];
+    fp=fopen("liste_contact.txt","r");
+    if(fp!=NULL)
+      {
+           while(fgets(ligne,200,fp)!=NULL)
+            {
+                pos=construction(ligne,1,'|',c.Num_Tel);
+                pos=construction(ligne,pos,'|',c.Nom);
+                pos=construction(ligne,pos,'|',c.Prenom);
+                pos=construction(ligne,pos,'|',c.DN) ;
+                pos=construction(ligne,pos,'|',c.AD.Ville);
+                pos=construction(ligne,pos,'|',c.AD.Rue);
+                pos=construction(ligne,pos,'|',c.AD.Code_postal);
+                pos=construction(ligne,pos,'|',c.E_Mail);
+                p=Insere_Queue_Tel(p,c) ;
+            }
+      }
+    fclose(fp);
+    return p ;
+}
+#endif // ENTREE_SORTIE_H_INCLUDED

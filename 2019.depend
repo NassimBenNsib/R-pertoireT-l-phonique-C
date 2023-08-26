@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1557694227 source:c:\users\omiga\desktop\test\2018\mini_project_2019\resources.rc
+
+1558076815 source:f:\mini_project_2019\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557619835 f:\mini_project_2019\verification.h
+
+1557619884 f:\mini_project_2019\contact.h
+
+1558013373 f:\mini_project_2019\entree_sortie.h
+
+1557697827 source:f:\mini_project_2019\resources.rc
+
+1557694227 source:c:\users\nassim\desktop\mini_project_2019v22\resources.rc
+
+1576683454 source:c:\users\nassim\desktop\mini_project_2019v22\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557616235 c:\users\nassim\desktop\mini_project_2019v22\verification.h
+
+1557616284 c:\users\nassim\desktop\mini_project_2019v22\contact.h
+
+1558009773 c:\users\nassim\desktop\mini_project_2019v22\entree_sortie.h
+
+1576687054 source:c:\users\dell\desktop\mini_project_2019v2\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557616235 c:\users\dell\desktop\mini_project_2019v2\verification.h
+
+1557616284 c:\users\dell\desktop\mini_project_2019v2\contact.h
+
+1558009773 c:\users\dell\desktop\mini_project_2019v2\entree_sortie.h
+
+1557694227 source:c:\users\dell\desktop\mini_project_2019v2\resources.rc
+
+1576687054 source:d:\hh\mini_project_2019v2\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557619835 d:\hh\mini_project_2019v2\verification.h
+
+1557619884 d:\hh\mini_project_2019v2\contact.h
+
+1558013373 d:\hh\mini_project_2019v2\entree_sortie.h
+
+1557697827 source:d:\hh\mini_project_2019v2\resources.rc
+
+1576683454 source:d:\kais nouveau\kais 2019_2020\projet 2019-2020\mini_project_nassim-2019v2\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557616235 d:\kais nouveau\kais 2019_2020\projet 2019-2020\mini_project_nassim-2019v2\verification.h
+
+1557616284 d:\kais nouveau\kais 2019_2020\projet 2019-2020\mini_project_nassim-2019v2\contact.h
+
+1558009773 d:\kais nouveau\kais 2019_2020\projet 2019-2020\mini_project_nassim-2019v2\entree_sortie.h
+
+1557694227 source:d:\kais nouveau\kais 2019_2020\projet 2019-2020\mini_project_nassim-2019v2\resources.rc
+

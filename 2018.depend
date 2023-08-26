@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1558007199 source:c:\users\omiga\desktop\test\2018\mini_project_2019\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557616235 c:\users\omiga\desktop\test\2018\mini_project_2019\verification.h
+
+1557616284 c:\users\omiga\desktop\test\2018\mini_project_2019\contact.h
+
+1557961990 c:\users\omiga\desktop\test\2018\mini_project_2019\entree_sortie.h
+
+1557694227 source:c:\users\omiga\desktop\test\2018\mini_project_2019\resources.rc
+
+1557694227 source:c:\users\omiga\desktop\test\2018\mini_project_2019_2018\resources.rc
+
+1558012396 source:c:\users\omiga\desktop\test\2018\mini_project_2019_2018\main.c
+	<tchar.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<windows.h>
+	<commctrl.h>
+	<conio.h>
+	<mmsystem.h>
+	"Verification.h"
+	"Contact.h"
+	"Entree_Sortie.h"
+
+1557616235 c:\users\omiga\desktop\test\2018\mini_project_2019_2018\verification.h
+
+1557616284 c:\users\omiga\desktop\test\2018\mini_project_2019_2018\contact.h
+
+1558009773 c:\users\omiga\desktop\test\2018\mini_project_2019_2018\entree_sortie.h
+
